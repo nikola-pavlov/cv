@@ -79,7 +79,6 @@
 
     .cv__header {
       display: flex;
-      align-items: center;
       gap: 36px;
       padding: 0 60px 30px;
       border-bottom: 1px solid var(--border);
@@ -165,7 +164,6 @@
       color: #fff;
       transition: all 0.1s ease-in-out;
       border-color: transparent;
-      transform: none;
       box-shadow: 0 0 0 2px #e83390;
     }
 
@@ -400,6 +398,32 @@
         border-right: none;
         border-bottom: 1px solid var(--border);
       }
+
+      .cv__contact-item {
+        flex: 0 0 50%;
+        margin-bottom: .5rem;
+      }
+
+      .cv__download-btn {
+        flex: 0 0 100%;
+        text-align: center;
+        max-width: 200px;
+        left: 50%;
+    position: relative;
+    transform: translateX(-50%);
+    margin-top: 1rem;
+      }
+
+      .cv__identity {
+        flex: 0 0 100%;
+        text-align: center;
+        margin: 0;
+      }
+
+      .cv__contact-main {
+        flex-wrap: wrap;
+      }
+
     }
 
     @media (max-width: 600px) {
@@ -421,9 +445,9 @@
       }
 
       .cv__photo {
-        width: 120px;
-        height: 190px;
-        border-radius: 0 0 60px 60px;
+        width: 160px;
+        height: 221px;
+        border-radius: 0 0 80px 80px;
       }
 
       .cv__header-info {
@@ -464,6 +488,10 @@
       .cv__download-btn {
         width: 100%;
         text-align: center;
+        transform: auto;
+        left: auto;
+        transform: translateX(0);
+        margin-top: 0;
       }
 
       .cv__main,
