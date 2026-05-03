@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nikola Pavlov – CV</title>
+  <style>
+    @font-face {
+      font-family: 'Tele Neo';
+      src: url('./teleneo-office/Tele Neo.otf') format('opentype');
+      font-weight: 400;
+      font-style: normal;
+    }
+
+    @font-face {
+      font-family: 'Tele Neo';
+      src: url('./teleneo-office/Tele Neo Medium.otf') format('opentype');
+      font-weight: 500;
+      font-style: normal;
+    }
+
+    @font-face {
+      font-family: 'Tele Neo';
+      src: url('./teleneo-office/Tele Neo Bold.otf') format('opentype');
+      font-weight: 700;
+      font-style: normal;
+    }
+
+    @font-face {
+      font-family: 'Tele Neo';
+      src: url('./teleneo-office/Tele Neo Extrabold.otf') format('opentype');
+      font-weight: 800;
+      font-style: normal;
+    }
+
+    @font-face {
+      font-family: 'Tele Neo';
+      src: url('./teleneo-office/Tele Neo Thin.otf') format('opentype');
+      font-weight: 200;
+      font-style: normal;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --magenta: #e20074;
+      --dark: #000000;
+      --mid: #555;
+      --light: #595959;
+      --bg: #ffffff;
+      --sidebar-bg: #fafafa;
+      --border: #e0e0e0;
+      --tag-bg: #efeff0;
+      --tag-text: #333;
+    }
+
+    body {
+      font-family: 'Tele Neo', Arial, sans-serif;
+      background: transparent linear-gradient(180deg, #cacfdc00 0%, #cacfdc 100%) 0% 0% no-repeat padding-box;
+      color: var(--dark);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 40px 20px;
+    }
+
+    .cv {
+      width: 100%;
+      max-width: 1120px;
+      background: var(--bg);
+      box-shadow: 0 8px 40px rgba(0, 0, 0, 0.13);
+      border-radius: 25px;
+    }
+
+    .cv__header {
+      display: flex;
+      align-items: center;
+      gap: 36px;
+      padding: 0 60px 30px;
+      border-bottom: 1px solid var(--border);
+      position: relative;
+    }
+
+    .cv__photo {
+      flex-shrink: 0;
+      width: 160px;
+      height: 250px;
+      border-radius: 0 0 80px 80px;
+      border: 5px solid var(--magenta);
+      border-top: 0;
+      overflow: hidden;
+      background: #ccc;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .cv__photo-img {
+      width: 120%;
+      height: 120%;
+      object-fit: cover;
+    }
+
+    .cv__header-info {
+      flex: 1;
+      margin-top: 1.5rem;
+    }
+
+    .cv__contact-row {
+      display: flex;
+      margin-bottom: 18px;
+      flex-wrap: wrap;
+      border-bottom: 1px solid var(--border);
+      justify-content: space-between;
+    }
+
+    .cv__contact-main {
+      display: flex;
+      justify-content: space-between;
+      align-content: left;
+      align-items: baseline;
+    }
+
+    .cv__contact-item__label {
+      display: block;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--dark);
+      margin-bottom: 3px;
+    }
+
+    .cv__contact-item__value {
+      font-size: 14px;
+      color: var(--light);
+      font-weight: 400;
+    }
+
+    .cv__download-btn {
+      background-color: #e20074;
+      color: #fff;
+      border-radius: 50px;
+      height: 48px;
+      max-height: 48px;
+      display: block;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 16px;
+      padding: 4px 20px;
+      border-color: transparent;
+      min-width: 88px;
+      box-shadow: none;
+      text-decoration: none;
+      transition: all 0.1s ease-in-out;
+      line-height: 2.6;
+    }
+
+    .cv__download-btn:hover {
+      background-color: #e83390;
+      color: #fff;
+      transition: all 0.1s ease-in-out;
+      border-color: transparent;
+      transform: none;
+      box-shadow: 0 0 0 2px #e83390;
+    }
+
+    .cv__identity {
+      margin-top: 2rem;
+    }
+
+    .cv__identity__name {
+      font-size: 42px;
+      font-weight: 800;
+      color: var(--dark);
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+    }
+
+    .cv__identity__role {
+      font-size: 20px;
+      color: var(--light);
+      font-weight: 400;
+    }
+
+    .cv__body {
+      display: grid;
+      grid-template-columns: 1fr 420px;
+      min-height: 700px;
+    }
+
+    .cv__main {
+      padding: 40px 60px;
+      border-right: 1px solid var(--border);
+    }
+
+    .cv__sidebar {
+      padding: 40px 60px;
+    }
+
+    .cv__section-title {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 26px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--dark);
+      margin-bottom: 22px;
+    }
+
+    .cv__section-title::before {
+      content: '';
+      display: inline-block;
+      width: 7px;
+      height: 20px;
+      background: var(--magenta);
+      border-radius: 20px;
+      flex-shrink: 0;
+      top: -2px;
+      position: relative;
+    }
+
+    .cv__experience {
+      margin-bottom: 6px;
+      position: sticky;
+      top: 0;
+    }
+
+    .cv__exp-item {
+      margin-bottom: 26px;
+    }
+
+    .cv__exp-item__header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 1rem;
+    }
+
+    .cv__exp-item__company {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--dark);
+    }
+
+    .cv__exp-item__duration {
+      display: block;
+      font-size: 14px;
+      color: var(--light);
+      font-weight: 400;
+    }
+
+    .cv__exp-item__date {
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--dark);
+      text-align: right;
+      white-space: nowrap;
+      flex-shrink: 0;
+      margin-left: 16px;
+    }
+
+    .cv__exp-item__role {
+      font-size: 14px;
+      color: var(--light);
+      margin-bottom: 10px;
+    }
+
+    .cv__exp-item__bullets {
+      list-style: none;
+      padding: 0;
+    }
+
+    .cv__exp-item__bullets li {
+      font-size: 1rem;
+      color: var(--light);
+      line-height: 1.4;
+      padding-left: 20px;
+      font-weight: 100;
+      position: relative;
+      margin-bottom: 6px;
+    }
+
+    .cv__exp-item__bullets li::before {
+      content: '●';
+      position: absolute;
+      left: 0;
+      top: -5px;
+      font-size: 16px;
+      color: var(--dark);
+      line-height: 1.9;
+    }
+
+    .cv__divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 20px 0 24px;
+    }
+
+    .cv__sidebar-divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 22px 0;
+    }
+
+    .cv__summary {
+      margin-bottom: 30px;
+    }
+
+    .cv__summary__text {
+      font-size: 1rem;
+      color: var(--light);
+      line-height: 1.4;
+      font-weight: 100;
+      margin-bottom: 10px;
+    }
+
+    .cv__skills {
+      margin-bottom: 26px;
+    }
+
+    .cv__skill-group {
+      margin-bottom: 18px;
+    }
+
+    .cv__skill-group__label {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--dark);
+      margin-bottom: 8px;
+    }
+
+    .cv__tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .cv__tag {
+      background: var(--tag-bg);
+      color: var(--light);
+      font-size: 14px;
+      font-weight: 400;
+      padding: 4px 10px;
+      border-radius: 20px;
+      white-space: nowrap;
+    }
+
+    .cv__skill-group__text {
+      font-size: 1rem;
+      color: var(--light);
+      line-height: 1.4;
+      font-weight: 100;
+    }
+
+    .cv__education {
+      margin-bottom: 10px;
+    }
+
+    .cv__edu-item {
+      margin-bottom: 12px;
+    }
+
+    .cv__edu-item__school {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--dark);
+    }
+
+    .cv__edu-item__detail {
+      font-size: 1rem;
+      color: var(--light);
+      margin-top: 2px;
+    }
+
+    @media print {
+      body {
+        background: white;
+        padding: 0;
+      }
+
+      .cv {
+        box-shadow: none;
+        max-width: 100%;
+      }
+    }
+
+    @media (max-width: 900px) {
+      .cv__body {
+        grid-template-columns: 1fr;
+      }
+
+      .cv__main {
+        border-right: none;
+        border-bottom: 1px solid var(--border);
+      }
+    }
+
+    @media (max-width: 600px) {
+      body {
+        padding: 0;
+      }
+
+      .cv {
+        border-radius: 0;
+        box-shadow: none;
+      }
+
+      .cv__header {
+        flex-direction: column;
+        align-items: center;
+        padding: 0 24px 24px;
+        gap: 20px;
+        text-align: center;
+      }
+
+      .cv__photo {
+        width: 120px;
+        height: 190px;
+        border-radius: 0 0 60px 60px;
+      }
+
+      .cv__header-info {
+        width: 100%;
+        margin-top: 0;
+      }
+
+      .cv__contact-row {
+        justify-content: center;
+        gap: 12px 20px;
+        padding-bottom: 14px;
+      }
+
+      .cv__contact-item__label,
+      .cv__contact-item__value {
+        text-align: center;
+      }
+
+      .cv__contact-main {
+        flex-direction: column;
+        align-items: center;
+        gap: 14px;
+      }
+
+      .cv__identity {
+        margin-top: 0;
+        text-align: center;
+      }
+
+      .cv__identity__name {
+        font-size: 28px;
+      }
+
+      .cv__identity__role {
+        font-size: 16px;
+      }
+
+      .cv__download-btn {
+        width: 100%;
+        text-align: center;
+      }
+
+      .cv__main,
+      .cv__sidebar {
+        padding: 28px 24px;
+      }
+
+      .cv__exp-item__header {
+        flex-direction: column;
+        gap: 4px;
+      }
+
+      .cv__exp-item__date {
+        text-align: left;
+        margin-left: 0;
+        font-size: 15px;
+      }
+
+      .cv__section-title {
+        font-size: 20px;
+      }
+
+      .cv__exp-item__company {
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="cv">
+
+    <header class="cv__header">
+      <div class="cv__photo">
+        <img src="./profile-nikola_v2.png" alt="Nikola Pavlov" class="cv__photo-img">
+      </div>
+      <div class="cv__header-info">
+        <div class="cv__contact-row">
+          <div class="cv__contact-item">
+            <label class="cv__contact-item__label">Phone</label>
+            <span class="cv__contact-item__value">+389 70 240 617</span>
+          </div>
+          <div class="cv__contact-item">
+            <label class="cv__contact-item__label">E-Mail</label>
+            <span class="cv__contact-item__value">nikola8989@hotmail.com</span>
+          </div>
+          <div class="cv__contact-item">
+            <label class="cv__contact-item__label">Address</label>
+            <span class="cv__contact-item__value">Partizanski Odredi 103/12, Skopje</span>
+          </div>
+          <div class="cv__contact-item">
+            <label class="cv__contact-item__label">Date of Birth</label>
+            <span class="cv__contact-item__value">21.12.1989</span>
+          </div>
+        </div>
+        <div class="cv__contact-main">
+          <div class="cv__identity">
+            <h1 class="cv__identity__name">Nikola Pavlov</h1>
+            <p class="cv__identity__role">Social Media Content Creator/Manager</p>
+          </div>
+          <a href="Nikola-Pavlov_CV.pdf" class="cv__download-btn">Download PDF</a>
+        </div>
+      </div>
+    </header>
+
+    <div class="cv__body">
+
+      <main class="cv__main">
+        <div class="cv__experience">
+          <h2 class="cv__section-title">Working Experience</h2>
+
+          <div class="cv__exp-item">
+            <div class="cv__exp-item__header">
+              <span class="cv__exp-item__company">Fibula Travel Macedonia<span class="cv__exp-item__duration">Graphic Web Designer (Full Time)</span></span>
+              <span class="cv__exp-item__date">Feb 2015 - Present<span class="cv__exp-item__duration">11 years</span></span>
+            </div>
+            <ul class="cv__exp-item__bullets">
+              <li>Planned and executed full marketing campaigns from concept creation to final rollout across digital platforms.</li>
+              <li>Designed social media ads, website banners, landing pages, newsletters and promotional materials for travel offers and seasonal campaigns.</li>
+              <li>Managed paid advertising through Meta Ads, including audience targeting, budgeting, and campaign optimization.</li>
+              <li>Created and managed email marketing campaigns through Brevo and Mailchimp, as well as promotional campaigns via Viber.</li>
+              <li>Organized corporate events, including creative concepts, branded print materials in coordination with production vendors to ensure successful event delivery.</li>
+              <li>Maintained website content, promotional updates, and consistent brand identity across all online and offline channels.</li>
+            </ul>
+          </div>
+
+          <hr class="cv__divider">
+
+          <div class="cv__exp-item">
+            <div class="cv__exp-item__header">
+              <span class="cv__exp-item__company">CBS International Macedonia<span class="cv__exp-item__duration">Marketing Specialist (Contract - Remote)</span></span>
+              <span class="cv__exp-item__date">Oct 2018 - Present<span class="cv__exp-item__duration">7 years</span></span>
+            </div>
+            <ul class="cv__exp-item__bullets">
+              <li>Developed and executed digital marketing campaigns for commercial real estate projects, focusing on brand visibility and lead generation.</li>
+              <li>Created professional marketing materials including social media content, property presentations, advertisements, and promotional visuals.</li>
+              <li>Managed website updates, property listings, landing pages, and digital content to support sales activities.</li>
+              <li>Coordinated paid advertising campaigns, audience targeting, and brand communication across online channels.</li>
+            </ul>
+          </div>
+
+          <hr class="cv__divider">
+
+          <div class="cv__exp-item">
+            <div class="cv__exp-item__header">
+              <span class="cv__exp-item__company">Cushman &amp; Wakefield | CBS International Austria<span class="cv__exp-item__duration">Content Manager &amp; Web Designer (Contract - Remote)</span></span>
+              <span class="cv__exp-item__date">May 2024 - Present<span class="cv__exp-item__duration">2 years</span></span>
+            </div>
+            <ul class="cv__exp-item__bullets">
+              <li>Manage website content, property listings, landing pages, and digital materials for the Austrian commercial real estate market, supporting lead generation and professional market positioning.</li>
+              <li>Design presentations, banners, social media content, and online visuals in full alignment with Cushman &amp; Wakefield corporate branding guidelines, visual identity standards, and global design principles.</li>
+              <li>Collaborate with internal teams to ensure consistent brand communication and high-quality content across all digital channels.</li>
+            </ul>
+          </div>
+
+        </div>
+      </main>
+
+      <aside class="cv__sidebar">
+
+        <div class="cv__summary">
+          <h2 class="cv__section-title">Summary</h2>
+          <p class="cv__summary__text">Creative &amp; result-driven professional with a meticulous eye for detail and a strong sense of visual aesthetics.</p>
+          <p class="cv__summary__text">Expert in balancing high corporate branding standards with innovative graphic &amp; web design.</p>
+          <p class="cv__summary__text">I am also a proactive learner passionate about emerging technologies, dedicated to delivering impactful digital content and strategic marketing solutions.</p>
+        </div>
+
+        <hr class="cv__sidebar-divider">
+
+        <div class="cv__skills">
+          <h2 class="cv__section-title">Skills &amp; Tools</h2>
+
+          <div class="cv__skill-group">
+            <div class="cv__skill-group__label">Design &amp; Creative</div>
+            <div class="cv__tags">
+              <span class="cv__tag">Adobe Creative Cloud</span>
+              <span class="cv__tag">Adobe Photoshop</span>
+              <span class="cv__tag">Adobe Illustrator</span>
+              <span class="cv__tag">Adobe Lightroom</span>
+              <span class="cv__tag">Adobe After Effects</span>
+              <span class="cv__tag">Adobe Premiere Pro</span>
+            </div>
+          </div>
+
+          <div class="cv__skill-group">
+            <div class="cv__skill-group__label">Marketing &amp; Advertisement</div>
+            <div class="cv__tags">
+              <span class="cv__tag">Meta Business Suite</span>
+              <span class="cv__tag">Meta Ads Manager</span>
+              <span class="cv__tag">Newsletters</span>
+              <span class="cv__tag">MailChimp</span>
+              <span class="cv__tag">Brevo</span>
+              <span class="cv__tag">Viber for Business</span>
+              <span class="cv__tag">Google Analytics</span>
+            </div>
+          </div>
+
+          <div class="cv__skill-group">
+            <div class="cv__skill-group__label">Web Content</div>
+            <div class="cv__tags">
+              <span class="cv__tag">HTML 5</span>
+              <span class="cv__tag">CSS/SCSS</span>
+              <span class="cv__tag">JavaScript</span>
+              <span class="cv__tag">Git</span>
+              <span class="cv__tag">NodeJS</span>
+              <span class="cv__tag">Contentful CMS</span>
+              <span class="cv__tag">Wordpress</span>
+            </div>
+          </div>
+
+          <div class="cv__skill-group">
+            <div class="cv__skill-group__label">AI @ Work</div>
+            <p class="cv__skill-group__text">Integrating tools like Magnific, Adobe Firefly, Claude and Gemini to accelerate production and automate repetitive tasks and significantly reducing turnaround times while ensuring strict adherence to corporate brand standards.</p>
+          </div>
+
+          <div class="cv__skill-group">
+            <div class="cv__skill-group__label">Languages</div>
+            <p class="cv__skill-group__text">Macedonian, English &amp; Serbian (Fluent)</p>
+          </div>
+        </div>
+
+        <hr class="cv__sidebar-divider">
+
+        <div class="cv__education">
+          <h2 class="cv__section-title">Education</h2>
+
+          <div class="cv__edu-item">
+            <div class="cv__edu-item__school">SUGS "Nikola Karev" Skopje</div>
+            <div class="cv__edu-item__detail">High School Diploma [2004 – 2008]</div>
+          </div>
+
+          <div class="cv__edu-item">
+            <div class="cv__edu-item__school">University American College Skopje</div>
+            <div class="cv__edu-item__detail">Degree in Computer Science [2008 – 2012]</div>
+          </div>
+        </div>
+
+      </aside>
+    </div>
+  </div>
+
+</body>
+</html>
